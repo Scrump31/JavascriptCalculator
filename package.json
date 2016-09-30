@@ -1,0 +1,26 @@
+{
+  "name": "javascript_calculator",
+  "version": "1.0.0",
+  "description": "a basic calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scrump31/JavascriptCalculator.git"
+  },
+  "keywords": [
+    "javascript",
+    "calculator"
+  ],
+  "author": "Scottie Crump",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Scrump31/JavascriptCalculator/issues"
+  },
+  "homepage": "https://github.com/Scrump31/JavascriptCalculator#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
