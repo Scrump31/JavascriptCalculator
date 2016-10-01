@@ -34,6 +34,8 @@ button {
   -ms-flex-positive: 1;
   flex-grow: 1;
   height: 5.3rem; }
+  button:active {
+    background-color: #d9d9d9; }
 
 button[name=zeroBtn] {
   width: 5.6136rem;
@@ -62,10 +64,14 @@ button[name=zeroBtn] {
 
 .topBtns {
   background-color: #cdcdcd; }
+  .topBtns:active {
+    background-color: #9a9a9a; }
 
 .operatorBtn {
   background-color: orange;
   color: white; }
+  .operatorBtn:active {
+    background-color: #e69500; }
 
 footer {
   margin-top: 2px; }

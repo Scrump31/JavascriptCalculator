@@ -45,6 +45,9 @@ button {
   padding: 1.5rem;
   flex-grow: 1;
   height: 5.3rem;
+  &:active {
+    background-color: darken(lighten($grayBtn, 45%), 10%);
+  }
 }
 //Button Specific Styles
 button[name=zeroBtn] {
@@ -60,9 +63,15 @@ button[name=zeroBtn] {
 }
 .topBtns {
   background-color: lighten($grayBtn, 30%);
+  &:active {
+    background-color: lighten($grayBtn, 10%);
+  }
 }
 .operatorBtn {
   background-color: $operatorBtn;
+  &:active {
+    background-color: darken($operatorBtn, 5%);
+  }
   color: white;
 }
 
