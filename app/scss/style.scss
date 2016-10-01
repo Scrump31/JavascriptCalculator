@@ -1,57 +1,71 @@
 //Variables
 $btnWidth:2.8068rem;
+$operatorBtn: orange;
+$grayBtn: gray;
 
 body {
-  margin-right: auto;
-  margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-h1 {
+h1,footer {
   text-align: center;
 }
 
 #calculator {
-  height: 35rem;
   background-color: #999;
-  border: 3px black solid;
-  padding: 5px;
+  border: 5px black solid;
   border-radius: 10px;
   font-size: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 
   //Total Screen
   #total {
-    background: white;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    background-color: black;
+    border: 3px solid white;
+    border-radius:10px 10px 0px 0px;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-right: 1rem;
     text-align: right;
-    margin-bottom: 5px;
     font-size: 50px;
   }
   //Rows with Buttons
   #row1, #row2, #row3, #row4, #row5 {
     display: flex;
-    margin-bottom: 0.10rem;
   }
 }
-
 //General Button Styles
 button {
-  background-color: white;
+  background-color: lighten($grayBtn, 45%);
   width: $btnWidth;
   padding: 1.5rem;
   flex-grow: 1;
+  height: 5.3rem;
 }
 //Button Specific Styles
 button[name=zeroBtn] {
   width: $btnWidth *2;
-  flex-grow: 2.5;
+  flex-grow: 2.8;
+  //iphone 6
   @media screen and (orientation: landscape) { flex-grow: 2.14; }
+  @media (min-width: 375px) { flex-grow:2.4; }
+  //ipad
+  @media (width: 667px) { flex-grow:2.2; }
+  @media (min-width: 768px) { flex-grow:2.18; }
+  @media (min-width: 1024px) { flex-grow:2.2; }
+}
+.topBtns {
+  background-color: lighten($grayBtn, 30%);
+}
+.operatorBtn {
+  background-color: $operatorBtn;
+  color: white;
 }
 
-//Clear Button
-button[name=acBtn] {
-
+footer {
+  margin-top: 2px;
 }
