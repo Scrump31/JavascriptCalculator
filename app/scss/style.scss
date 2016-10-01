@@ -1,0 +1,57 @@
+//Variables
+$btnWidth:2.8068rem;
+
+body {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#calculator {
+  height: 35rem;
+  background-color: #999;
+  border: 3px black solid;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 2rem;
+
+  //Total Screen
+  #total {
+    background: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 1rem;
+    text-align: right;
+    margin-bottom: 5px;
+    font-size: 50px;
+  }
+  //Rows with Buttons
+  #row1, #row2, #row3, #row4, #row5 {
+    display: flex;
+    margin-bottom: 0.10rem;
+  }
+}
+
+//General Button Styles
+button {
+  background-color: white;
+  width: $btnWidth;
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+//Button Specific Styles
+button[name=zeroBtn] {
+  width: $btnWidth *2;
+  flex-grow: 2.5;
+  @media screen and (orientation: landscape) { flex-grow: 2.14; }
+}
+
+//Clear Button
+button[name=acBtn] {
+
+}
