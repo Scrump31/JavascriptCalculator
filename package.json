@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "lite-server"
+    "start": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,9 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "lite-server": "^2.2.2"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "mathjs": "^3.5.3"
   }
 }

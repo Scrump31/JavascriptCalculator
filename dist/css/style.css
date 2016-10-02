@@ -12,17 +12,23 @@ h1, footer {
   font-size: 2rem;
   max-width: 500px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  box-shadow: 10px 10px 5px #aaaaaa; }
   #calculator #total {
     background-color: black;
     border: 3px solid white;
     border-radius: 10px 10px 0px 0px;
-    color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     padding-right: 1rem;
-    text-align: right;
     font-size: 50px; }
+  #calculator input {
+    width: 100%;
+    margin-left: 0.1em;
+    text-align: right;
+    color: white;
+    background: black;
+    border: none; }
   #calculator #row1, #calculator #row2, #calculator #row3, #calculator #row4, #calculator #row5 {
     display: -ms-flexbox;
     display: flex; }
@@ -71,7 +77,12 @@ button[name=zeroBtn] {
   background-color: orange;
   color: white; }
   .operatorBtn:active {
-    background-color: #e69500; }
+    background-color: #cc8400; }
+  .operatorBtn:focus {
+    border: 2px solid black; }
+
+#row5 > button.operatorBtn:focus {
+  border: none; }
 
 footer {
   margin-top: 2px; }

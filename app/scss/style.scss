@@ -20,18 +20,27 @@ h1,footer {
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 10px 10px 5px #aaaaaa;
 
   //Total Screen
   #total {
     background-color: black;
     border: 3px solid white;
     border-radius:10px 10px 0px 0px;
-    color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    //color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
     padding-right: 1rem;
-    text-align: right;
+    //text-align: right;
     font-size: 50px;
+  }
+  input {
+    width: 100%;
+    margin-left: 0.1em;
+    text-align: right;
+    color: white;
+    background: black;
+    border: none;
   }
   //Rows with Buttons
   #row1, #row2, #row3, #row4, #row5 {
@@ -70,9 +79,15 @@ button[name=zeroBtn] {
 .operatorBtn {
   background-color: $operatorBtn;
   &:active {
-    background-color: darken($operatorBtn, 5%);
+    background-color: darken($operatorBtn, 10%);
+  }
+  &:focus {
+    border: 2px solid black;
   }
   color: white;
+}
+#row5>button.operatorBtn:focus{
+  border: none;
 }
 
 footer {

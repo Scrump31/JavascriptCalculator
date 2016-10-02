@@ -7,48 +7,55 @@
     <title>JavascriptCalculator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.css" media="screen">
     <link rel="stylesheet" href="dist/css/style.css" media="screen">
+    <script src="node_modules/angular/angular.min.js"></script>
   </head>
   <body>
     <h1>Javascript Calculator</h1>
 
-    <div id="calculator">
-      <div id="total">0</div>
+    <div id="calculator" ng-app="jsCalc" ng-controller="CalcController">
+      <div id="total">
+        <input placeholder="0" ng-model="mathResult" />
+      </div>
+
       <div id="row1">
-        <button type="button" class="topBtns" name="acBtn">AC</button>
-        <button type="button" class="topBtns" name="plusBtn">+/-</button>
-        <button type="button" class="topBtns" name="modBtn">%</button>
-        <button type="button" class="operatorBtn" name="divBtn">&#247;</button>
+        <button type="button" ng-click="mathResult = ''" class="topBtns" name="acBtn">AC</button>
+        <button type="button" ng-click="" class="topBtns" name="plusMinsBtn">+/-</button>
+        <button type="button" ng-click="mathResult = mathResult + '%'" class="topBtns" name="modBtn">%</button>
+        <button type="button" ng-click="mathResult = mathResult + '/'" class="operatorBtn" name="divBtn">&#247;</button>
       </div>
 
       <div id="row2">
-        <button type="button" name="sevenBtn">7</button>
-        <button type="button" name="eightBtn">8</button>
-        <button type="button" name="nineBtn">9</button>
-        <button type="button" class="operatorBtn" name="multBtn">x</button>
+        <button type="button" ng-click="mathResult = mathResult + '7'" name="sevenBtn">7</button>
+        <button type="button" ng-click="mathResult = mathResult + '8'" name="eightBtn">8</button>
+        <button type="button" ng-click="mathResult = mathResult + '9'" name="nineBtn">9</button>
+        <button type="button" ng-click="mathResult = mathResult + '*'" class="operatorBtn" name="multBtn">x</button>
       </div>
 
       <div id="row3">
-        <button type="button" name="fourBtn">4</button>
-        <button type="button" name="fiveBtn">5</button>
-        <button type="button" name="sixBtn">6</button>
-        <button type="button" class="operatorBtn" name="subtBtn">-</button>
+        <button type="button" ng-click="mathResult = mathResult + '4'" name="fourBtn">4</button>
+        <button type="button" ng-click="mathResult = mathResult + '5'" name="fiveBtn">5</button>
+        <button type="button" ng-click="mathResult = mathResult + '6'" name="sixBtn">6</button>
+        <button type="button" ng-click="mathResult = mathResult + '-'" class="operatorBtn" name="subtBtn">-</button>
       </div>
 
       <div id="row4">
-        <button type="button" name="oneBtn">1</button>
-        <button type="button" name="twoBtn">2</button>
-        <button type="button" name="threeBtn">3</button>
-        <button type="button" class="operatorBtn" name="plusBtn">+</button>
+        <button type="button" ng-click="mathResult = mathResult + '1'" name="oneBtn">1</button>
+        <button type="button" ng-click="mathResult = mathResult + '2'" name="twoBtn">2</button>
+        <button type="button" ng-click="mathResult = mathResult + '3'" name="threeBtn">3</button>
+        <button type="button" ng-click="mathResult = mathResult + '+'"class="operatorBtn" name="plusBtn">+</button>
       </div>
 
       <div id="row5">
-        <button type="button" name="zeroBtn">0</button>
-        <button type="button" name="decimalBtn">.</button>
-        <button type="button" class="operatorBtn" name="equalBtn">=</button>
+        <button type="button" ng-click="mathResult = mathResult + '0'" name="zeroBtn">0</button>
+        <button type="button" ng-click="mathResult = mathResult + '.'" name="decimalBtn">.</button>
+        <button type="button" ng-click="doMath()" class="operatorBtn" name="equalBtn">=</button>
       </div>
 
     </div><!-- calculator -->
       <footer>Coded by Scottie Crump</footer>
     </div>
+    <script src="node_modules/mathjs/dist/math.js" type="text/javascript"></script>
+    <script src="dist/js/app.js" type="text/javascript"></script>
+
   </body>
 </html>
