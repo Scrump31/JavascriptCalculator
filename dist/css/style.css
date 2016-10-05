@@ -18,17 +18,13 @@ h1, footer {
     background-color: black;
     border: 3px solid white;
     border-radius: 10px 10px 0px 0px;
+    color: aqua;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-right: 1rem;
-    font-size: 50px; }
-  #calculator input {
-    width: 100%;
-    margin-left: 0.1em;
     text-align: right;
-    color: white;
-    background: black;
-    border: none; }
+    font-size: 50px;
+    overflow: auto; }
   #calculator #row1, #calculator #row2, #calculator #row3, #calculator #row4, #calculator #row5 {
     display: -ms-flexbox;
     display: flex; }

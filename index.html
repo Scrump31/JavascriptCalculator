@@ -14,41 +14,40 @@
 
     <div id="calculator" ng-app="jsCalc" ng-controller="CalcController">
       <div id="total">
-        <input placeholder="0" readonly ng-model="mathResult" />
+        <div id="totalScreen" ng-bind="currentNumber | number"></div>
       </div>
-
       <div id="row1">
-        <button type="button" ng-click="mathResult = ''" class="topBtns" name="acBtn">AC</button>
+        <button type="button" ng-click="currentNumber = '0'" class="topBtns" name="acBtn">AC</button>
         <button type="button" ng-click="" class="topBtns" name="plusMinsBtn">+/-</button>
-        <button type="button" ng-click="mathResult = mathResult + '%'" class="topBtns" name="modBtn">%</button>
-        <button type="button" ng-click="mathResult = mathResult + '/'" class="operatorBtn" name="divBtn">&#247;</button>
+        <button type="button" ng-click="numInput('','%')" class="topBtns" name="modBtn">%</button>
+        <button type="button" ng-click="numInput('','/')" class="operatorBtn" name="divBtn">&#247;</button>
       </div>
 
       <div id="row2">
-        <button type="button" ng-click="mathResult = mathResult + '7'" name="sevenBtn">7</button>
-        <button type="button" ng-click="mathResult = mathResult + '8'" name="eightBtn">8</button>
-        <button type="button" ng-click="mathResult = mathResult + '9'" name="nineBtn">9</button>
-        <button type="button" ng-click="mathResult = mathResult + '*'" class="operatorBtn" name="multBtn">x</button>
+        <button type="button" ng-click="numInput('7')" name="sevenBtn">7</button>
+        <button type="button" ng-click="numInput('8')" name="eightBtn">8</button>
+        <button type="button" ng-click="numInput('9')" name="nineBtn">9</button>
+        <button type="button" ng-click="numInput('','*')" class="operatorBtn" name="multBtn">x</button>
       </div>
 
       <div id="row3">
-        <button type="button" ng-click="mathResult = mathResult + '4'" name="fourBtn">4</button>
-        <button type="button" ng-click="mathResult = mathResult + '5'" name="fiveBtn">5</button>
-        <button type="button" ng-click="mathResult = mathResult + '6'" name="sixBtn">6</button>
-        <button type="button" ng-click="mathResult = mathResult + '-'" class="operatorBtn" name="subtBtn">-</button>
+        <button type="button" ng-click="numInput('4')" name="fourBtn">4</button>
+        <button type="button" ng-click="numInput('5')" name="fiveBtn">5</button>
+        <button type="button" ng-click="numInput('6')" name="sixBtn">6</button>
+        <button type="button" ng-click="numInput('','-')" class="operatorBtn" name="subtBtn">-</button>
       </div>
 
       <div id="row4">
-        <button type="button" ng-click="mathResult = mathResult + '1'" name="oneBtn">1</button>
-        <button type="button" ng-click="mathResult = mathResult + '2'" name="twoBtn">2</button>
-        <button type="button" ng-click="mathResult = mathResult + '3'" name="threeBtn">3</button>
-        <button type="button" ng-click="mathResult = mathResult + '+'"class="operatorBtn" name="plusBtn">+</button>
+        <button type="button" ng-click="numInput('1')" name="oneBtn">1</button>
+        <button type="button" ng-click="numInput('2')" name="twoBtn">2</button>
+        <button type="button" ng-click="numInput('3')" name="threeBtn">3</button>
+        <button type="button" ng-click="numInput('','+')" class="operatorBtn" name="plusBtn">+</button>
       </div>
 
       <div id="row5">
-        <button type="button" ng-click="mathResult = mathResult + '0'" name="zeroBtn">0</button>
-        <button type="button" ng-click="mathResult = mathResult + '.'" name="decimalBtn">.</button>
-        <button type="button" ng-click="doMath()" class="operatorBtn" name="equalBtn">=</button>
+        <button type="button" ng-click="numInput('0')" name="zeroBtn">0</button>
+        <button type="button" ng-click="numInput('.')" name="decimalBtn">.</button>
+        <button type="button" ng-click="calcExpress()" class="operatorBtn" name="equalBtn">=</button>
       </div>
 
     </div><!-- calculator -->
