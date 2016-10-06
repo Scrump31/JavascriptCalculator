@@ -26,7 +26,13 @@ angular.module('jsCalc', [])
       }
       //adds new numbers
       $scope.currentNumber += num;
-      
+      //change fontSize based on number of characters entered
+      if($scope.currentNumber.length >= 12){
+        document.getElementById("totalScreen").style.fontSize = "35px";
+      }else {
+        document.getElementById("totalScreen").style.fontSize = "50px";
+      }
+
       //use this log to see output of currentNumber, currentOperator added to currentExpression
       console.log(currentExpression); //remove when finished testing code output
     };
