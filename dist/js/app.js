@@ -9,14 +9,14 @@ angular.module('jsCalc', [])
 
     $scope.numInput = function(num,operator) {
       $scope.currentOperator = operator;
-      /*clear out currentNumber if previously evaluated expression
-       still inside variable before adding new numbers */
-      if(calcFinished === true){
+      /* concats new operator to result of previous calculated expresssion and clears
+       out currentNumber so new num can be concatenated to complete expression */
+      if(calcFinished === true && $scope.currentOperator === undefined){
         $scope.currentNumber = '0';
         calcFinished = false;
       }
-      /*if user inputs a number followed by an operator,
-        add current num and operator to currentExpression and clear out currentNumber
+      /*when user inputs num followed by operator,
+        concat current num and operator to currentExpression and clear out currentNumber
         so new num can be added */
       else if($scope.currentOperator !== undefined){
         currentExpression +=$scope.currentNumber+$scope.currentOperator;
@@ -24,14 +24,9 @@ angular.module('jsCalc', [])
         try removing repeated operators/decimals from currentExpression */
         $scope.currentNumber = '';
       }
-      /*removes default '0' if at beginning of string when inputting new expressions,
-        else just add the new number to currentNumber */
-      if($scope.currentNumber.charAt(0) === '0'){
-        $scope.currentNumber = $scope.currentNumber.slice(1) + num;
-      }else{
-      //finally add new number after running through all 'if' checks
+      //adds new numbers
       $scope.currentNumber += num;
-      }
+      
       //use this log to see output of currentNumber, currentOperator added to currentExpression
       console.log(currentExpression); //remove when finished testing code output
     };
