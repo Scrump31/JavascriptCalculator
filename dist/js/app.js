@@ -46,7 +46,7 @@ angular.module('jsCalc', [])
     };
     //toggles converting number to positive/negative number
     $scope.cvtPosNeg = function(){
-      if($scope.currentNumber.charAt(0) !== '-'){
+      if($scope.currentNumber.toString().charAt(0) !== '-'){
         $scope.currentNumber = '-'+$scope.currentNumber;
       }else{
         $scope.currentNumber = $scope.currentNumber.slice(1);
@@ -56,7 +56,7 @@ angular.module('jsCalc', [])
     $scope.calcExpress = function() {
       //concat last input to currentExpression before calculating expression
       currentExpression += $scope.currentNumber;
-      //remove repeating operators if they exist 
+      //remove repeating operators if they exist
       currentExpression = currentExpression.replace(/(\/{2,})/g, '\/').replace(/(\*{2,})/g, '*').replace(/(\-{2,})/g, '-');
       //Check that we have a math expression and last character in expression is a number
       var numCheck = currentExpression.charAt(currentExpression.length -1);
