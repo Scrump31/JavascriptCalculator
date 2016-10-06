@@ -35,9 +35,22 @@ angular.module('jsCalc', [])
       //use this log to see output of currentNumber, currentOperator added to currentExpression
       console.log(currentExpression); //remove when finished testing code output
     };
-    //converts numbers to percent 
+    //concats decimal to number
+    $scope.appendDec = function(){
+        $scope.currentNumber = $scope.currentNumber+'.';
+    };
+
+    //converts numbers to percent
     $scope.cvtToPerc = function(){
         $scope.currentNumber = Number($scope.currentNumber)/100;
+    };
+    //toggles converting number to positive/negative number
+    $scope.cvtPosNeg = function(){
+      if($scope.currentNumber.charAt(0) !== '-'){
+        $scope.currentNumber = '-'+$scope.currentNumber;
+      }else{
+        $scope.currentNumber = $scope.currentNumber.slice(1);
+      }
     };
 
     $scope.calcExpress = function() {
