@@ -56,6 +56,8 @@ angular.module('jsCalc', [])
     $scope.calcExpress = function() {
       //concat last input to currentExpression before calculating expression
       currentExpression += $scope.currentNumber;
+      //remove repeating operators if they exist 
+      currentExpression = currentExpression.replace(/(\/{2,})/g, '\/').replace(/(\*{2,})/g, '*').replace(/(\-{2,})/g, '-');
       //Check that we have a math expression and last character in expression is a number
       var numCheck = currentExpression.charAt(currentExpression.length -1);
       if(currentExpression.length > 0 && /\D+/.exec(numCheck) === null  ){
