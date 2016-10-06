@@ -19,8 +19,6 @@ angular.module('jsCalc', [])
         so new num can be added */
       else if($scope.currentOperator !== undefined){
         currentExpression +=$scope.currentNumber+$scope.currentOperator;
-        /*need a regex to remove repeated operators and decimals somewhere here!!
-        try removing repeated operators/decimals from currentExpression */
         $scope.currentNumber = '';
       }
       //adds new numbers
@@ -31,15 +29,12 @@ angular.module('jsCalc', [])
       }else {
         document.getElementById("totalScreen").style.fontSize = "50px";
       }
-
-      //use this log to see output of currentNumber, currentOperator added to currentExpression
-      console.log(currentExpression); //remove when finished testing code output
     };
-    //concats decimal to number
+    //concats decimal to number and removes consecutive decimals
     $scope.appendDec = function(){
         $scope.currentNumber = $scope.currentNumber+'.';
+        $scope.currentNumber = $scope.currentNumber.replace(/(\.{2,})/g, '\.');
     };
-
     //converts numbers to percent
     $scope.cvtToPerc = function(){
         $scope.currentNumber = Number($scope.currentNumber)/100;
@@ -52,7 +47,6 @@ angular.module('jsCalc', [])
         $scope.currentNumber = $scope.currentNumber.slice(1);
       }
     };
-
     $scope.calcExpress = function() {
       //concat last input to currentExpression before calculating expression
       currentExpression += $scope.currentNumber;
