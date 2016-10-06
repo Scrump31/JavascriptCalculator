@@ -6,7 +6,6 @@ angular.module('jsCalc', [])
     var currentExpression = '';
     //keeps track if expression calculated
     var calcFinished = false;
-
     $scope.numInput = function(num,operator) {
       $scope.currentOperator = operator;
       /* concats new operator to result of previous calculated expresssion and clears
@@ -35,6 +34,10 @@ angular.module('jsCalc', [])
 
       //use this log to see output of currentNumber, currentOperator added to currentExpression
       console.log(currentExpression); //remove when finished testing code output
+    };
+    //converts numbers to percent 
+    $scope.cvtToPerc = function(){
+        $scope.currentNumber = Number($scope.currentNumber)/100;
     };
 
     $scope.calcExpress = function() {
